@@ -5,5 +5,8 @@ android:
     - platform-tools
     - tools
   licenses:
-      - 'android-sdk-preview-license-.+'
-      - 'android-sdk-license-.+'
+    - 'android-sdk-preview-license-.+'
+    - 'android-sdk-license-.+'
+
+install:
+  - 'yes | sudo sdkmanager --licenses'
