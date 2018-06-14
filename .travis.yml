@@ -6,17 +6,22 @@ android:
     - platform-tools
     - build-tools-27.0.3
     - build-tools-28.0.0
+    - android-25
     - android-28
-    - sys-img-armeabi-v7a-android-28
+    - sys-img-armeabi-v7a-android-25
 
   licenses:
     - 'android-sdk-preview-license-.+'
     - 'android-sdk-license-.+'
 
+env:
+  - ANDROID_TARGET=android-25
+  - ANDROID_ABI=armeabi-v7a
+
 # Emulator Management: Create, Start and Wait
 before_script:
   - android list targets
-  - echo no | android create avd --force -n test -t android-28
+  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
