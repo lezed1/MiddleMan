@@ -5,4 +5,5 @@ android:
     - platform-tools
     - tools
   licenses:
+      - 'android-sdk-preview-license-.+'
       - 'android-sdk-license-.+'
